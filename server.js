@@ -15,7 +15,10 @@ app.use(express.static("public"));
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://<brusp>:<howyadoin1>@ds011251.mlab.com:11251/heroku_970bsg97"; 
 
-mongoose.connect(MONGODB_URI); 
+mongoose.connect(MONGODB_URI, { 
+  useNewUrlParser: true,
+  useFindAndModify: false
+  });
 
 // mongoose.connect("mongodb://localhost/workout", {
 //   useNewUrlParser: true,
